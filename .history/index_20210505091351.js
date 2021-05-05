@@ -1,11 +1,11 @@
 // 1. Combining Arrays
 
-let asianCountries = ["Südkorea", "China", "Kambodscha", "Mongolei"];
-
+let asianCountries = ["Südkorea", "China", "Kambodscha", "Mongolei", ...euroCountries];
+console.log(asianCountries);
 
 let euroCountries = ["Deutschland", "Litauen", "Griechenland", "Irland", ...asianCountries];
 
-// asianCountries needs to be assigned first for above example !! or error
+// asianCountries needs to be assigned first for above example?
 
 // euroCountries.push(asianCountries);
 // console.log(euroCountries);
@@ -24,23 +24,16 @@ const birds = ["eagles", "vultures", "robins"];
 
 const newArray = [...colours, ...birds];
 
-console.log(1, newArray);
+console.log(newArray);
 
 
 
 // 2. Copying Arrays
 
-const bing = ["bing", "bang", "bong"];
+const arrayToBeCopied = ["bing", "bang", "bong"];
 
-const copyOfBing = [...bing];
-console.log(2, copyOfBing);
-
-copyOfBing.push("sing sang song");
-
-console.log(2, copyOfBing);
-console.log(2, bing);
-
-// we know it is copy, as changes made to copy do not affect original
+const newVar = [...arrayToBeCopied];
+console.log(newVar);
 
 
 // 3. Find the Largest...
@@ -49,16 +42,14 @@ const iHateNumbers = [34, 63, 19, 358, 292];
 
 const largestNum = param => Math.max(...param);
 
-console.log(3., largestNum(iHateNumbers));
+console.log(largestNum(iHateNumbers));
 
 
 // 4. Find the Smallest
 
 const smallestNum = param => Math.min(...param);
 
-console.log(4., smallestNum(iHateNumbers));
-
-console.log(4., Math.round(smallestNum)); // in case u want integer
+console.log(smallestNum(iHateNumbers));
 
 
 //5 Clone and Merge....
@@ -66,20 +57,17 @@ console.log(4., Math.round(smallestNum)); // in case u want integer
 const person = {name: "John"};
 const job = {role: "Teacher"};
 
-const cloneOfPerson = {...person};
-console.log(5., cloneOfPerson);
+const newPerson = {...person};
+console.log(newPerson);
 
-console.log(5., person == cloneOfPerson);
-console.log(5., person === cloneOfPerson);
+console.log(person == newPerson);
+console.log(person === newPerson);
 
 let employee = {...person, ...job};
-console.log(5., employee);
+console.log(employee);
 
 employee.role = "Walrus tamer";
-console.log(5., employee);
-
-// original person has not changed, the copy, employee, has. If we changed cloneOfPerson, person would still remain unchanged
-
+console.log(employee);
 
 // 6. Is the average a whole number?
 
@@ -88,9 +76,9 @@ function isAverageWholeNumber(param1, param2, param3, param4) {
     let average = (param1 + param2 +  param3 + param4) / 4;
 
     if (parseInt(Number(average)) === true) {
-        console.log(6., true);
+        console.log(true);
     } else {
-        console.log(6., false);
+        console.log(false);
     }
 }
 

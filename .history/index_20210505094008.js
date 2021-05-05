@@ -73,7 +73,7 @@ console.log(5., person == cloneOfPerson);
 console.log(5., person === cloneOfPerson);
 
 let employee = {...person, ...job};
-console.log(5., employee);
+console.log(5., smallestNum, employee);
 
 employee.role = "Walrus tamer";
 console.log(5., employee);
